@@ -3,5 +3,9 @@
 - 📫 You can reach me by the followings:
   - vvidman@gmail.com
   - https://www.linkedin.com/in/viktor-vidman-55a2a197/
-- 🌱 I’m currently learnings:
+- I’m currently learnings:
   - https://www.coursera.org/professional-certificates/microsoft-ai-and-ml-engineering
+- Interest and long-term plan:
+  - Quantum computing
+  - Quantum programing
+  - Q# and Qiskit
