@@ -1,97 +1,179 @@
 # 👋 Hi, I'm Viktor Vidman (@vvidman)!
 
-## 🎯 Lead Software Devloper | Software Architect | Control Software Development Specialist | Continuous Learner
+## 🎯 Software Architect | AI-Augmented Development | .NET / C# Specialist
 
-With 10+ years of experience in designing and developing complex control software systems. I'm passionate about building robust, scalable systems that integrate both desktop and web-based modules.
+With 16+ years of experience designing and building complex software systems — most recently evolving toward **AI-augmented development workflows**, where the human orchestrates and the AI executes.
 
-### 🔧 Technology Stack
+After over a decade of backend and control software architecture, I'm now channeling that same systems-thinking discipline into a new domain: building reliable, structured pipelines where LLMs are first-class participants — not afterthoughts.
 
-**Core Technologies**
-- **C# / .NET** - Enterprise applications, desktop control software
-- **C++** - High-performance, real-time control systems
-- **SQL / NoSQL** - Complex database architectures, optimization
-- **Docker** - Containerization, DevOps integration
+> *"The human orchestrates, the AI executes."*
 
-**Web & Modern Technologies**
-- **Web Technologies** - RESTful APIs, web modules for desktop systems
-- **Python** - Rapid prototyping, learning support environment
+---
+
+## 🔧 Technology Stack
+
+**Core**
+- **C# / .NET 10** — Enterprise backend, pipelines, agentic systems
+- **SQL / PostgreSQL** — Complex schemas, optimization, observability stores
+- **Docker** — Local dev and deployment orchestration
+- **C++** — High-performance, real-time systems (legacy depth)
+
+**AI & LLM Tooling**
+- **Anthropic Claude API** — Prompt engineering, context engineering, agentic workflows
+- **LlamaSharp** — Local LLM inference in .NET
+- **GitHub Copilot** — AI-assisted development (IDE, CLI, Agent Mode, Copilot Spaces)
+- **Groq / OpenAI-compatible APIs** — Inference endpoint integration
+- **RAG pipelines** — Retrieval-Augmented Generation, vector stores, dual-store architecture
 
 **Architectural Expertise**
-- Microservices-based architectures
-- Event-driven design
-- CQRS and Domain-Driven Design (DDD)
-- CI/CD pipeline design and implementation
+- Human-in-the-loop pipeline design
+- Context engineering (3-tier: bootstrap → knowledge manifest → knowledge leaves)
+- Microservices, Clean Architecture, Vertical Slice
+- Event-driven design, CQRS, DDD
+- CI/CD pipeline design
 
 ---
 
 ## 💼 Professional Focus
 
-- 🎮 **Control Software** - Desktop application development for industrial and specialized environments
-- 🌐 **Hybrid Systems** - Extending desktop applications with web-based modules
-- 🏗️ **Software Architecture** - Designing scalable, maintainable systems
-- 📊 **Data Management** - Complex data storing design and optimization
-- 🐳 **DevOps** - Containerization, automation, deployment strategies
+- 🤖 **AI-Augmented Development** — Designing workflows where LLMs are structured, validated participants
+- 🏗️ **Software Architecture** — Scalable, maintainable systems with explicit interfaces and human revision gates
+- 🔬 **Observability** — Structured tracing for AI pipelines (spans, traces, queryable metadata)
+- 🧪 **Agentic Systems** — Multi-agent orchestration, role simulation, prompt validation
+- 🐳 **DevOps** — Containerization, local-first infrastructure, Docker-based deployment
 
 ---
-<!--
+
 ## 🚀 Featured Projects
 
-### [Project Name 1]
-> Brief description of the project - what was the goal, what technologies did you use
-- **Tech Stack:** C#, .NET, SQL Server, Docker
-- **My Role:** Lead Architect
-- **Results:** Measurable outcomes, e.g., performance improvements, user base growth
+### [Scaffold Protocol](https://github.com/vvidman/Dev_Scaffold)
+> Human-in-the-loop AI pipeline with explicit orchestration and revision gates
+
+- **Tech Stack:** C# / .NET 10, Named Pipes, Protobuf (gRPC), CLI
+- **Status:** ServiceHost complete (6 components), Agent.Protocol complete (4 proto files), CLI refactor in progress
+- **Highlights:** Thin CLI client, ServiceHost auto-start with retry logic, CommandEnvelope / EventEnvelope handling
 
 ---
--->
+
+### [ChaosForge](https://github.com/vvidman/ChaosForge)
+> Multi-agent Scrum simulator — autonomous agents, structured roles, human revision gates
+
+- **Tech Stack:** C# / .NET 10
+- **Highlights:** Agent role simulation, revision gate philosophy, CLAUDE.md / memory.md alignment
+
+---
+
+### [RagLab](https://github.com/vvidman/RagLab)
+> Handbuilt Retrieval-Augmented Generation pipeline in .NET/C#
+
+- **Tech Stack:** C# / .NET 10, LlamaSharp, Claude API, Clean Architecture, Vertical Slice
+- **Highlights:** Dual vector store, provider pattern, Qdrant integration (phase 2)
+
+---
+
+### [AiObservability](https://github.com/vvidman/AiObservability)
+> Lightweight cross-project observability library for .NET 10 AI pipelines
+
+- **Tech Stack:** C# / .NET 10, PostgreSQL 16, Npgsql, Docker
+- **Instruments:** RagLab, ChaosForge, Scaffold Protocol
+- **Highlights:** Span/trace model, pluggable `ITraceStore` (InMemory / JSON / Postgres), composition-root-only storage selection, 7 ADRs
+
+---
+
+## 🧩 Workflow & Template Design
+
+I don't just use AI tools — I design the workflows around them. These public template repositories reflect an architect's perspective on human+AI collaboration: how to structure context, close feedback loops between tools, and define explicit boundaries between what the human decides and what the AI executes.
+
+---
+
+### [AI Workflow Template — Claude Code](https://github.com/vvidman/claude-code-workflow-template)
+> Pairing a reasoning model with Claude Code for planning + implementation
+
+A repository template that closes the feedback loop between a reasoning model (planning, specs, ADRs) and Claude Code (implementation, review, progress tracking). The reference implementation of this workflow pattern.
+
+- Slash commands: `/new-feature`, `/review-ready`, `/review-fix`
+- Separation of concerns: specs and decisions written by human, review files and progress generated by Claude Code
+- Claude Code never runs git commands — human stays in control of the commit boundary
+
+---
+
+### [AI Workflow Template — Codex CLI](https://github.com/vvidman/codex-workflow-template)
+> Same workflow pattern, ported to OpenAI Codex CLI
+
+A direct port of the Claude Code workflow template for teams using Codex CLI. Follows the identical loop and convention structure; not yet tested in production.
+
+- Skills: `$new-feature`, `$review-ready`, `$review-fix`
+- Identical workflow philosophy, different entry point file (`AGENTS.md`)
+
+---
+
+### [AI-Augmented Contributor Knowledge Base](https://github.com/vvidman/contributor-knowledge-base-templates)
+> Tool-agnostic, 3-tier structured context for AI coding assistants
+
+A template for setting up a layered knowledge base from day one — useful for both human contributors and AI coding assistants. The AI loads only what is relevant to the current task; it always knows *what exists* without loading *everything*.
+
+- **Tier 1** — Root instruction file (always loaded, intentionally lean)
+- **Tier 2** — Category manifests (loaded when a category is relevant)
+- **Tier 3** — Specific knowledge files (loaded only when directly needed)
+- Tool-agnostic content with tool-specific entry points: `CLAUDE.md`, `AGENTS.md`, `.cursorrules`, `.windsurfrules`, `copilot-instructions.md`
+- Conflict resolution priority: ADR > Domain > Architecture > Conventions > Toolchain
+
+---
+
 ## 📚 Articles & Blog Posts
 
-<!-- Your blog post links go here -->
-- 📝 [Diving into Quantum Computing](https://www.linkedin.com/pulse/diving-quantum-computing-viktor-vidman-palmf/?trackingId=J4bNn%2F3XT4ayUB3VWgZDtQ%3D%3D) - Quantum programming: Determination and tool assessment
-- 📝 [A roadmap to reach Quantum Developer level](https://www.linkedin.com/pulse/roadmap-reach-quantum-developer-level-viktor-vidman-2z50f/) - Quantum programming: naive plan, where to go, what to do
+- 📝 [Diving into Quantum Computing](https://www.linkedin.com/pulse/diving-quantum-computing-viktor-vidman-palmf/?trackingId=J4bNn%2F3XT4ayUB3VWgZDtQ%3D%3D) — Quantum programming: determination and tool assessment
+- 📝 [A roadmap to reach Quantum Developer level](https://www.linkedin.com/pulse/roadmap-reach-quantum-developer-level-viktor-vidman-2z50f/) — Naive plan, where to go, what to do
+
+*More posts at [vvidman.github.io](https://vvidman.github.io)*
 
 ---
 
 ## 🎓 Certifications & Training
 
-<!-- Your certifications go here -->
-- 🏆 [GIT Masterclass] - Udemy, Warp 9 Training, Codestars, 2026
-- 🏆 [Ultimate Docker Fast-Track Beginner to Advanced] - Udemy, Warp 9 Training, Codestars, 2026
-- 🏆 [Microservices and Deployment by using ASP.NET] - Coursera, Board Infinity, 2026
-- 🏆 [Cloud Computing Primer: IaaS, PaaS, SaaS] - Coursera, Codio, 2026
-- 🏆 [Generative AI: Elevate your Software Development Career] - Coursera, IBM, 2025
-- 🏆 [Vibe Coding Fundamentals]- Coursera, University of Colorado System, 2025
-- 🏆 [Foundations of AI and Machine Learning] - Coursera, Microsoft, 2025
-- 🏆 [Programming in Python] - Coursera, Meta, 2025
+**Udemy — 2026**
+- 🏆 Claude Code: Beginner to Pro
+- 🏆 GitHub Copilot: Beginner to Pro
+- 🏆 Jenkins CI/CD
+- 🏆 Git Masterclass
+- 🏆 Ultimate Docker: Fast-Track Beginner to Advanced
+- 🏆 Microservices and Deployment using ASP.NET
+
+**Coursera — 2025–2026**
+- 🏆 Cloud Computing Primer: IaaS, PaaS, SaaS
+- 🏆 Generative AI: Elevate your Software Development Career — IBM
+- 🏆 Vibe Coding Fundamentals — University of Colorado System
+- 🏆 Foundations of AI and Machine Learning — Microsoft
+- 🏆 Programming in Python — Meta
+
+**Microsoft Learn — 2026**
+- 🏆 GitHub Copilot: Intro · Responsible AI · Prompt Engineering · Advanced Features · IDE / CLI / GitHub.com · Agent Mode · Copilot Spaces · Consolidate Duplicate Logic · Agent Mode Application Development *(9 badges)*
+
+**Microsoft Learn — 2025**
+- 🏆 Azure Quantum *(6 badges)*
+
+---
+
+## 💡 Currently Exploring
+
+- 🤖 **AI-Augmented Development** — Context engineering, agentic pipelines, human-in-the-loop design
+- 🔭 **RAG & Local LLM Inference** — LlamaSharp, Qdrant, dual vector store architectures
+- ⚛️ **Quantum Computing** — A parallel interest alongside AI; on the back-burner for now, but not forgotten
 
 ---
 
 ## 🤝 Connect With Me
 
 - 💼 [LinkedIn](https://www.linkedin.com/in/viktor-vidman-55a2a197/)
-- 📧 Email: [vvidman@gmail.com](mailto:vvidman@gmail.com)
-<!--- 🌐 Website/Blog: [yourblog.com](https://yourblog.com) if available -->
+- 🌐 [Blog — vvidman.github.io](https://vvidman.github.io)
+- 📧 [vvidman@gmail.com](mailto:vvidman@gmail.com)
 
 ---
 
-## 💡 Currently Learning
-
-- 🐍 **Python** - data processing, machine learning basics
-- ☁️ **Cloud Technologies** - Azure/AWS architecture patterns
-- ⚛️ **Quantum Computing** - Learning quantum algorithms and programming
-
----
-<!--
-### 📈 Contribution Activity
-
-![GitHub Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=vvidman&theme=react-dark&hide_border=true)
-
----
--->
 <div align="center">
 
-### ⭐ "Good architecture is not about avoiding decisions, but making the right decisions at the right time."
+### ⭐ *"The human orchestrates, the AI executes."*
 
-*Open to professional conversations, collaborations, and mentoring opportunities.*
+*Open to professional conversations, collaborations, and opportunities in AI-augmented software engineering.*
 
 </div>
